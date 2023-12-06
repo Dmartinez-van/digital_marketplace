@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Tutorial
+
+This is a project following along with [Josh Tried Coding](https://www.youtube.com/watch?v=06g6YJ6JCJU&t=2708s) to build a complete digital marketplace. Using this as a resource to learn some design patterns and styling patterns one might use in such a product.
+
+### Learnings So Far
+
+* shadcn lib
+** cn() function to merge tailwind functions with potential classnames from props.
+* tailwind layouts for clean centered designs + mobile to large screen responsiveness.
 
 ## Getting Started
 
