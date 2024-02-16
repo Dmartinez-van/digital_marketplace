@@ -5,15 +5,16 @@ import { Button, buttonVariants } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
 
 import {
   AuthCredentialsValidator,
   TAuthCredentialsValidator
 } from '@/lib/validators/account-credentails-validators'
+import { trpc } from '@/trpc/client'
 
 const Page = () => {
   const {
@@ -24,8 +25,10 @@ const Page = () => {
     resolver: zodResolver(AuthCredentialsValidator)
   })
 
+  const { mutate, isLoading } = trpc.auth.createPayloadUser.useMutation({})
+
   const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {
-    // send data to server
+    mutate({ email, password })
   }
 
   return (
@@ -70,6 +73,7 @@ const Page = () => {
                       'focus-visible:ring-red-500': errors.password
                     })}
                     placeholder="Password"
+                    type="password"
                   />
                 </div>
                 <Button>Sign up</Button>
