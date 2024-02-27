@@ -1,4 +1,3 @@
-import { access } from 'fs'
 import { PRODUCT_CATEGORIES } from '../../config'
 import { CollectionConfig } from 'payload/types'
 
