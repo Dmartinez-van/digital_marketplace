@@ -47,8 +47,6 @@ const ProductReel = (props: ProductReelProps) => {
               {title}
             </h1>
           ) : null}
-        </div>
-        <div className="max-w-2xl px-4 lg:max-w-4xl lg:px-0">
           {subtitle ? (
             <p className="mt-2 text-sm text-muted-foreground">{subtitle}</p>
           ) : null}
